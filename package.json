@@ -1,0 +1,27 @@
+{
+  "name": "saga-thunk-sample",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "axios": "0.18.0",
+    "immutable": "4.0.0-rc.9",
+    "prop-types": "15.6.1",
+    "react": "16.9",
+    "react-dom": "16.9",
+    "react-redux": "5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "4.0.0",
+    "redux-saga": "0.16.2",
+    "redux-saga-effects": "1.1.0",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
