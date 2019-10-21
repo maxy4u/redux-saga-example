@@ -1,16 +1,21 @@
-import React, {useCallback} from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userActions } from '../../redux/actions'
 
-const { nameChange, ageChange } = userActions
+const { nameChange, ageChange, getAge } = userActions
 
 const  User = ({
   name, 
   age,
   onAgeChange,
-  onNameChange
+  onNameChange,
+  onLoadAge
 }) => {
+  useEffect(()=>{
+    debugger;
+    onLoadAge(35);
+  },[])
   const onNameUpdate = useCallback((e)=>onNameChange(e),[])
   const onAgeUpdate = useCallback((e)=>onAgeChange(e),[])
     return (
@@ -38,7 +43,8 @@ const mapStateToProps = ({user})=>(
 )
 const mapDispatchToProps = (dispatch)=>({
   onNameChange : (e) => dispatch(nameChange(e.target.value)),
-  onAgeChange : (e) => dispatch(ageChange(e.target.value))
+  onAgeChange : (e) => dispatch(ageChange(e.target.value)),
+  onLoadAge: (startFrom) => { debugger; return dispatch(getAge(startFrom))}
 })
 export default connect(mapStateToProps, mapDispatchToProps)(User); // zmieniono na sposob  z dekoratorem connect
 
