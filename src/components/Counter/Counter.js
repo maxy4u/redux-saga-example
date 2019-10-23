@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 import User from "../User/User.js";
 import { counterActions } from '../../redux/actions'
 
-debugger; 
-
-console.log(counterActions);
 const {increment, decrement, update, initCount: {request: initialCountRequest} } = counterActions
 
 const  Counter = ({
@@ -44,7 +41,7 @@ Counter.propTypes = {
   onIncrement: PropTypes.func,
   onDecrement: PropTypes.func,
   update: PropTypes.func,
-  date: PropTypes.func // date daje nam string a new date daje nam klase
+  date: PropTypes.date 
 };
 const mapStateToProps = ({counter})=>(
   {
@@ -56,7 +53,7 @@ const mapDispatchToProps = (dispatch)=>({
   onIncrement : () => dispatch(increment()),
   onDecrement : () => dispatch(decrement()),
   onUpdate : () => dispatch(update()),
-  onLoadInitCount: (startFrom) => { debugger; return dispatch(initialCountRequest(startFrom))}
+  onLoadInitCount: (startFrom) => { return dispatch(initialCountRequest(startFrom))}
 
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Counter); // zmieniono na sposob  z dekoratorem connect

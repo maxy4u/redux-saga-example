@@ -13,7 +13,6 @@ const  User = ({
   onLoadAge
 }) => {
   useEffect(()=>{
-    debugger;
     onLoadAge(35);
   },[])
   const onNameUpdate = useCallback((e)=>onNameChange(e),[])
@@ -44,7 +43,7 @@ const mapStateToProps = ({user})=>(
 const mapDispatchToProps = (dispatch)=>({
   onNameChange : (e) => dispatch(nameChange(e.target.value)),
   onAgeChange : (e) => dispatch(ageChange(e.target.value)),
-  onLoadAge: (startFrom) => { debugger; return dispatch(getAge(startFrom))}
+  onLoadAge: (startFrom) => { return dispatch(getAge(startFrom))}
 })
 export default connect(mapStateToProps, mapDispatchToProps)(User); // zmieniono na sposob  z dekoratorem connect
 

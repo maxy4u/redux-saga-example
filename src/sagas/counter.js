@@ -10,25 +10,25 @@ const entityCurrentState = {
 
 // Generic Routine for all kind of fetch
 function* fetchEntity(entity, apiFn, { payload, ...rest }){
-  debugger;
-  console.log(payload, rest);
   try {
     const response = yield call(apiFn, { payload }, rest);
-    debugger; 
     yield put(entity.success(response));
-    debugger; 
     return response;
   }catch(error){
-    debugger;
     yield put(entity.failure(error))
   } 
 }
 
 const fetchInitCounter = fetchEntity.bind(null, initCount, getInitialCount)
 
+const testSagaRedux = function* (){
+  const curStateTime = yield select(getDate);
+  console.log(`${curStateTime.getHours()} : ${curStateTime.getMinutes()}: ${curStateTime.getSeconds()}`)
+} 
+
 export default function* root() {
-  debugger;
   yield all([
     takeLatest(GET_INIT_COUNT.REQUEST, fetchInitCounter),
+    takeLatest('UPDATE', testSagaRedux)
   ])
 }

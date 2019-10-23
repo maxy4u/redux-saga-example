@@ -1,2 +1,4 @@
-export const getCounter = state => state.counter || null ;
-export const getDate = state => state.date || null ;
+export const getCounter = ({counter}) => counter.counter || null ;
+export const getDate = ({counter}) => { 
+  return counter.date || null 
+} ;

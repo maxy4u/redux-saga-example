@@ -1,2 +1,2 @@
-export const getName = state => state.name || null ;
-export const getAge = state => state.age || null ;
+export const getName = ({user}) => user.name || null ;
+export const getAge = ({user}) => user.age || null ;

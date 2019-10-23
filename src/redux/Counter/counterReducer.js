@@ -10,7 +10,6 @@ export const counterReducer = (state = initState, action) => {
     case "UPDATE":
       return { ...state, date: new Date()}
     case GET_INIT_COUNT.SUCCESS: 
-    debugger; 
       return {...state, counter: +action.count }; // plus will ensure a number conversion
     default:
       return state;
