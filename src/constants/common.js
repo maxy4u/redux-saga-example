@@ -1,3 +1,9 @@
-export const REQUEST = 'REQUEST';
-export const SUCCESS = 'SUCCESS';
-export const FAILURE = 'FAILURE';
+export const REQUEST = 'REQUEST'
+export const SUCCESS = 'SUCCESS'
+export const FAILURE = 'FAILURE'
+export const INCREMENT = 'INCREMENT'
+export const DECREMENT = 'DECREMENT'
+export const UPDATE = 'UPDATE'
+export const SET_NAME = 'SET_NAME'
+export const SET_AGE = 'SET_AGE'
+export const RECEIVED_AGE = 'RECEIVED_AGE'
